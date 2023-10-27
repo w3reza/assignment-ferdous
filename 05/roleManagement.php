@@ -95,56 +95,6 @@ fclose($myfile);
                   </table>
 
 
-                  <button type="button" class="btn btn-primary float-end"><a class="acolor" href="createRole.php">Create
-                      New Role</a></button>
-                  <h3 class="mb-0 pb-2 pb-md-0 mb-md-0">Role Management</h3>
-                  <?php
-                  $myrolefile = fopen("role.txt", "r") or die("Unable to open file!");
-                  // Output one line until end-of-file
-                  $id = array();
-                  $role = array();
-
-                  while (!feof($myrolefile)) {
-                    $line = fgets($myrolefile);
-                    $values = explode(",", $line); // role, email, password, firstname, lastname, age
-                    if (count($values) >= 2) {
-                      array_push($id, trim($values[0]));
-                      array_push($role, trim($values[1]));
-
-                    }
-
-
-                  }
-                  fclose($myrolefile);
-                  ?>
-
-                  <table class="table table-bordered" style='margin-top: 20px;'>
-                    <thead>
-                      <tr>
-
-                        <th scope="col">ID</th>
-                        <th scope="col">Role Name</th>
-
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      for ($i = 0; $i < count($id); $i++) {
-                        echo "<tr>";
-                        echo " <td>" . $id[$i] . "</td>";
-                        echo " <td>" . $role[$i] . "</td>";
-                        echo " <td style='width: 20px;'> <button type='button' class='btn btn-success'><a class='acolor' href='editRole.php?id={$id[$i]}&role={$role[$i]}'>" . "Edit" . "</a></button> </td>";
-                        echo " <td style='width: 20px;'> <button type='button' class='btn btn-danger'> <a  class='acolor' href='userRoleDelete.php?id={$id[$i]}'>" . "Delete" . "</a></button> </td>";
-
-                        echo "</tr>";
-
-                      }
-
-
-                      ?>
-
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>

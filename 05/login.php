@@ -92,7 +92,7 @@ elseif (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
         <strong>User Access:</strong> Email: user@gmail.com Password: 12345
       </div>
       <div class="alert alert-info" role="alert">
-    <strong>Admin Access:</strong> Email: reza@gmail.com Password: 12345
+    <strong>Admin Access:</strong> Email: ferdous@gmail.com Password: 12345
   </div>
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
